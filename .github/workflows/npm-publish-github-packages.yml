@@ -26,5 +26,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/NolifekNTB/github.com/NolifekNTB/dockerizedservice:latest
-            ghcr.io/NolifekNTB/github.com/NolifekNTB/dockerizedservice:${{ github.sha }}
+            ghcr.io/NolifekNTB/Dockerized-Service:latest
+            ghcr.io/NolifekNTB/Dockerized-Service:${{ github.sha }}
