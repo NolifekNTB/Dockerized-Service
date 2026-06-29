@@ -35,8 +35,13 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            echo "I am $FOO"
-            echo "I am $BAR"
-            echo "sha: $SHA"
-      
+            cd /home/ubuntu/dockerNodeDeploy
+            export CR_PAT=${{ secrets.GHCR_TOKEN }}
+            echo $CR_PAT | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
+            docker pull ghcr.io/nolifekntb/dockerized-service:latest
+            docker run -d \
+              -p 3000:3000 \
+              --env-file .env \
+              ghcr.io/nolifekntb/dockerized-service:latest
+    
     
