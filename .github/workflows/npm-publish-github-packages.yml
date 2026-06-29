@@ -36,8 +36,8 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /home/ubuntu/dockerNodeDeploy
-            export CR_PAT=${{ secrets.GHCR_TOKEN }}
-            echo $CR_PAT | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
+            sudo export CR_PAT=${{ secrets.GHCR_TOKEN }}
+            sudo echo $CR_PAT | docker login ghcr.io -u NolifekNTB --password-stdin
             sudo docker pull ghcr.io/nolifekntb/dockerized-service:latest
             sudo docker run -d \
               -p 3000:3000 \
