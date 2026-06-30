@@ -3,4 +3,4 @@ WORKDIR /app
 COPY . .
 RUN npm install --omit=dev
 CMD ["node", "node.js"]
-EXPOSE 3000
+EXPOSE 80
