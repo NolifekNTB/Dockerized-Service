@@ -40,7 +40,7 @@ jobs:
             echo $CR_PAT | sudo docker login ghcr.io -u NolifekNTB --password-stdin
             sudo docker pull ghcr.io/nolifekntb/dockerized-service:latest
             sudo docker run -d \
-              -p 3000:3000 \
+              -p 80:80 \
               --env-file .env \
               ghcr.io/nolifekntb/dockerized-service:latest
             
