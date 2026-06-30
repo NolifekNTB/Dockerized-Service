@@ -37,6 +37,7 @@ jobs:
           script: |
             cd /home/ubuntu/dockerNodeDeploy
             export CR_PAT=${{ secrets.GHCR_TOKEN }}
+            sudo service docker restart
             echo $CR_PAT | sudo docker login ghcr.io -u NolifekNTB --password-stdin
             sudo docker pull ghcr.io/nolifekntb/dockerized-service:latest
             sudo docker run -d \
